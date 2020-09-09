@@ -1,7 +1,7 @@
 SAML 2.0 PHP Library (Dropbox Fork)
 ====================
 
-[![GitHub release](https://img.shields.io/github/release/dropbox/lightsaml.svg)](https://github.com/lightSAML/dropbox)
+[![GitHub release](https://img.shields.io/github/release/dropbox/lightsaml.svg)](https://github.com/dropbox/lightSAML/)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Build Status](https://travis-ci.org/dropbox/lightSAML.svg?branch=master)](https://travis-ci.org/dropbox/lightSAML)
 [![Packagist Version](https://img.shields.io/packagist/v/dropbox/lightsaml.svg?style=flat-square)](https://packagist.org/packages/dropbox/lightsaml)

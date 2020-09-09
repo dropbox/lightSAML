@@ -3,7 +3,6 @@ vendor/*
 /.idea
 /composer.lock
 /bin
-/php-cs-fixer-v2.phar
 /composer.phar
 /web/sp/*.log
 /web/idp/*.log

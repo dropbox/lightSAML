@@ -23,8 +23,6 @@ abstract class AbstractBinding
     protected $eventDispatcher;
 
     /**
-     * @param EventDispatcherInterface|null $eventDispatcher
-     *
      * @return AbstractBinding
      */
     public function setEventDispatcher(EventDispatcherInterface $eventDispatcher = null)
@@ -35,7 +33,7 @@ abstract class AbstractBinding
     }
 
     /**
-     * @return null|\Symfony\Component\EventDispatcher\EventDispatcherInterface
+     * @return \Symfony\Component\EventDispatcher\EventDispatcherInterface|null
      */
     public function getEventDispatcher()
     {
@@ -48,7 +46,7 @@ abstract class AbstractBinding
     protected function dispatchReceive($messageString)
     {
         if ($this->eventDispatcher) {
-            $this->eventDispatcher->dispatch(Events::BINDING_MESSAGE_RECEIVED, new GenericEvent($messageString));
+            $this->eventDispatcher->dispatch(new GenericEvent($messageString), Events::BINDING_MESSAGE_RECEIVED);
         }
     }
 
@@ -58,21 +56,16 @@ abstract class AbstractBinding
     protected function dispatchSend($messageString)
     {
         if ($this->eventDispatcher) {
-            $this->eventDispatcher->dispatch(Events::BINDING_MESSAGE_SENT, new GenericEvent($messageString));
+            $this->eventDispatcher->dispatch(new GenericEvent($messageString), Events::BINDING_MESSAGE_SENT);
         }
     }
 
     /**
-     * @param MessageContext $context
-     * @param null|string    $destination
+     * @param string|null $destination
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     abstract public function send(MessageContext $context, $destination = null);
 
-    /**
-     * @param Request        $request
-     * @param MessageContext $context
-     */
     abstract public function receive(Request $request, MessageContext $context);
 }
